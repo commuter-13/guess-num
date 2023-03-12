@@ -26,7 +26,7 @@ def get_tdee(sex, height, weight, age, times):
 print("\n歡迎使用綜合健康計算機")
 while True:
     number = input(
-        "\n(1)計算BMI (2)計算基礎代謝率(BMR) (3)計算總熱量消耗(TDEE) (4)結束\n選擇要計算的項目:")
+        "\n(1)計算BMI (2)計算基礎代謝率(BMR) (3)計算總熱量消耗(TDEE) (4)結束\n請選擇要計算的項目:")
     if number == "1":
         height = float(input("\n請輸入身高(公分):"))
         weight = float(input("\n請輸入體重(公斤):"))
@@ -81,6 +81,9 @@ while True:
         continue
 
     elif number == "4":
+        print("\nGOODBYE\n")
         break
 
-print("\nGOODBYE")
+    else:
+        print("\n請重新輸入")
+        continue
