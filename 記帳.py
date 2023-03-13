@@ -16,7 +16,6 @@ while True:
     price = input("請輸入商品價格：")
     price = int(price)
     products.append([name, price])
-
 print("完整清單:", products)
 
 # 印出所有購買紀錄
