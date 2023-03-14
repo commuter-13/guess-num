@@ -34,7 +34,6 @@ def write_file(fileName, lines):
 # 主要
 def main():
     lines = read_file("input.txt")
-    print(lines)
     lines = convert(lines)
     write_file("output.txt", lines)
 
