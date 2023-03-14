@@ -8,7 +8,7 @@ def read_file(fileName):
 
 
 # 計算 字 貼圖 圖片
-def convert(lines):
+def count(lines):
     allen_word = 0
     allen_image = 0
     allen_sticker = 0
@@ -44,7 +44,7 @@ def convert(lines):
 # 主要
 def main():
     lines = read_file("LINE-Viki.txt")
-    lines = convert(lines)
+    lines = count(lines)
 
 
 main()
