@@ -1,14 +1,16 @@
+import time
+import progressbar
+
 # 讀取檔案
 data = []
 count = 0
+bar = progressbar.ProgressBar(max_value=1000000)
 with open("reviews.txt", "r")as f:
     for line in f:
         data.append(line)
         count += 1
-        if count % 500000 == 0:
-            print(len(data))
+        bar.update(count)
 print("檔案讀取完了，總共有", len(data), "筆資料")
-print("第0筆的資料內容: ", data[0])
 
 # 算每筆資料的平均長度
 sum_len = 0
@@ -32,8 +34,8 @@ for x in data:
 print("一共有", len(good), "筆留言提到good")
 print(good[0])
 
-
 # 文字計數
+start_time = time.time()
 wc = {}
 for d in data:
     # split()預設值是空白鍵
@@ -45,11 +47,15 @@ for d in data:
             # 新增新的key進wc字典
             wc[word] = 1
 
+# 計算單字出現的次數
 for word in wc:
     if wc[word] > 1000000:
         print(word, "出現的次數為", wc[word], "次")
+end_time = time.time()
 
+print("文字計數時間花了", end_time-start_time, "秒")
 print("總共有幾個字:", len(wc))
+
 
 while True:
     word = input("輸入想查詢的字:")
